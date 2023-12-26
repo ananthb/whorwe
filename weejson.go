@@ -185,7 +185,7 @@ func parseJSONArray(r []byte) ([]any, int64, error) {
 
 // parseJSONString reads a JSON string from the given byte slice.
 // It returns the parsed string, the number of bytes read, and an error.
-func parseJSONString(r []byte) (string, []byte, error) {
+func parseJSONString(r []byte) (string, int64, error) {
 	// Smallest valid string is `""`.
 	if l := len(r); l < 2 {
 		return "", 0, errors.New("unexpected end of input")
